@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2 id="title">XMLHttpRequest</h2>
+<script type="text/javascript">
+	const xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			if(xhr.status==200) {
+				console.log(xhr.responseText);
+			}
+			if(xhr.status==404){
+				console.log('file or resoure no tfount');
+
+			}
+		}
+	};
+xhr.open('get','jsnew.txt',true);
+xhr.send();
+</script>
+</body>
+</html>

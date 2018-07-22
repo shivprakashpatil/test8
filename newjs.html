@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+<button onclick="getnames()">click me</button>
+
+
+<div id="call"></div>
+
+
+<script type="text/javascript">
+function getnames()
+	{
+	alert('javascript called');
+	if(window.XMLHttpRequest)  
+	{
+	alert('windows document element is called');
+	 var xmlhttp=new XMLHttpRequest();
+
+	}
+	else{
+		xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()	{
+		alert('ajax is called')
+		if(xmlhttp.readyState==4)	{
+			alert('success',this.responseText);
+			document.getElementById("call").innerHTML=this.responseText;
+		}
+	
+	else{
+
+	}
+
+	}
+	XMLhttp.open("GET","html.html",true);
+	XMLhttp.send();
+}
+</script>
+<script>
+$(function(){
+		$('button').click(function(){
+			$.ajax({
+				url:"varifyname.html",
+				type:"get",
+				date:{
+
+				},
+				success:function(response){
+					alert(response)
+					document.getElementById("call").innerHTML=JSON.parse(response);
+
+				},
+				error:function(response){
+					alert('not right')
+				}
+			})
+		})
+		//alert('hi')
+
+})
+</script>

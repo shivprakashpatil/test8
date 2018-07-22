@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var a='lkjhh'
+		alert(a)
+		 $('#p1').hide();
+		 $('#show').click(function(){
+			$(this).css('color','red');
+		 	$(this).hide();
+			$('#p1').show(2000);
+		 	$('#p1').fadeIn(2000);
+		 	$('#p1').show(2000);
+		 	$('#p1').slideDown(2000);
+		 	$('#p1').fadeToggle(2000);
+
+		 })
+		 $('#hide').click(function(){
+		 	$('#p1').hide();
+		 	$('#p1').fadeOut(2000);
+		 	$('#p1').slideUp();
+
+		 })
+	})
+	alert('ijhg')
+
+		
+		
+	</script>
+</head>
+<body>
+<button id="hide">hide</button>
+<button id="show">show</button>
+<p id="p1">this is a class</p>
+</body>
+</html>
